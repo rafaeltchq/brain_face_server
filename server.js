@@ -9,14 +9,6 @@ const image = require('./controllers/image');
 const app = express();
 app.use(express.json());
 app.use(cors());
-// const { Client } = require('pg');
-
-// const db = new Client({
-//   connectionString: process.env.DATABASE_URL,
-//   ssl: {
-//     rejectUnauthorized: false
-//   }
-// });
 const db = knex({
     client: 'pg',
     connection: {
@@ -24,11 +16,6 @@ const db = knex({
         ssl: {
             rejectUnauthorized: false
         }
-  
-    //   host : '127.0.0.1',
-    //   user : 'postgres',
-    //   password : 'postgres',
-    //   database : 'brain_face_db'
     }
 });
 
