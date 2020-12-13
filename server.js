@@ -38,8 +38,8 @@ app.get('/profile/:id', (req, res) => {
 app.put('/image', image.handleImage(db));
 app.post('/imageUrl', (req, res) => image.handleApiCall(req, res));
 
-app.listen(3001, () => {
-    console.log(`Server started on 3001`);
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`Server started on ${process.env.PORT}`);
 });
 
 /*
